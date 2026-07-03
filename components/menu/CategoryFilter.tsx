@@ -1,21 +1,34 @@
+"use client";
+
 const categories = [
   "All",
   "Coffee",
   "Cold Brew",
   "Boba",
   "Kulfi",
-  "Sandwiches",
-  "Combos",
-  "Seasonal",
+  "Food",
 ];
 
-export default function CategoryFilter() {
+type Props = {
+  selected: string;
+  onSelect: (category: string) => void;
+};
+
+export default function CategoryFilter({
+  selected,
+  onSelect,
+}: Props) {
   return (
-    <div className="flex flex-wrap justify-center gap-4 mb-12">
+    <div className="flex flex-wrap gap-3 justify-center mb-12">
       {categories.map((category) => (
         <button
           key={category}
-          className="px-6 py-3 rounded-full bg-neutral-900 border border-neutral-700 hover:bg-amber-500 hover:text-black transition duration-300"
+          onClick={() => onSelect(category)}
+          className={`px-5 py-2 rounded-full transition ${
+            selected === category
+              ? "bg-amber-400 text-black"
+              : "bg-neutral-900 text-white hover:bg-neutral-800"
+          }`}
         >
           {category}
         </button>
