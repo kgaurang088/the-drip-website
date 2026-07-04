@@ -29,7 +29,7 @@ export default function EmptyCart() {
 
         <p className="mt-6 text-lg leading-8 text-gray-400">
 
-          Looks like you haven't added anything yet.
+          Looks like you haven&apos;t added anything yet.
           Explore our handcrafted coffee, artisan kulfi,
           refreshing boba and delicious sandwiches.
 

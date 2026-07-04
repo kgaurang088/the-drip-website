@@ -61,9 +61,13 @@ export default function Footer() {
                 Gallery
               </Link>
 
-              <Link href="/offers" className="hover:text-amber-400 transition">
-                Offers
+              <Link href="/order-online" className="hover:text-[#C8A96A] transition">
+               Order-Online 
               </Link>
+
+             {/*} <Link href="/offers" className="hover:text-amber-400 transition">
+                Offers
+              </Link>*/}
 
               <Link href="/contact" className="hover:text-amber-400 transition">
                 Contact

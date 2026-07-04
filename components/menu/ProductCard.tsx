@@ -14,22 +14,20 @@ export default function ProductCard({ product }: Props) {
   const { addToCart } = useCart();
 
   return (
-    <div className="group overflow-hidden rounded-[32px] border border-white/10 bg-[#151515] transition-all duration-500 hover:-translate-y-2 hover:border-[#C8A96A]">
-
+   <div className="group overflow-hidden rounded-[24px] lg:rounded-[32px] border border-white/10 bg-[#151515] transition-all duration-500 hover:-translate-y-2 hover:border-[#C8A96A]">
       {/* Image */}
 
-      <div className="relative flex h-72 items-center justify-center overflow-hidden bg-[#101010]">
-
+     <div className="relative flex h-56 sm:h-64 lg:h-72 items-center justify-center overflow-hidden bg-[#101010]">
         <Image
-          src={product.image}
-          alt={product.name}
-          width={220}
-          height={220} 
-          className="object-contain transition-transform duration-700 group-hover:scale-110"
-        />
-
+  src={product.image}
+  alt={product.name}
+  width={220}
+  height={220}
+  className="w-36 sm:w-44 lg:w-56 h-auto object-contain transition-transform duration-700 group-hover:scale-110"
+/>
+       
         {product.bestseller && (
-          <span className="absolute left-5 top-5 rounded-full bg-[#C8A96A] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-black">
+          <span className="absolute left-3 top-3 sm:left-5 sm:top-5 rounded-full bg-[#C8A96A] px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-black">
             Bestseller
           </span>
         )}
@@ -38,7 +36,7 @@ export default function ProductCard({ product }: Props) {
 
       {/* Content */}
 
-      <div className="p-6">
+      <div className="p-4 sm:p-5 lg:p-6">
 
         <div className="flex items-center justify-between">
 
@@ -62,17 +60,17 @@ export default function ProductCard({ product }: Props) {
 
         </div>
 
-        <h3 className="mt-4 text-2xl font-bold">
+        <h3 className="mt-3 text-xl sm:text-2xl font-bold">
           {product.name}
         </h3>
 
-        <p className="mt-3 h-12 text-sm leading-6 text-gray-400">
+        <p className="mt-3 min-h-[48px] text-sm leading-6 text-gray-400">
           {product.description}
         </p>
 
         <div className="mt-8 flex items-center justify-between">
 
-          <span className="text-3xl font-bold text-[#C8A96A]">
+          <span className="text-2xl sm:text-3xl font-bold text-[#C8A96A]">
             ₹{product.price}
           </span>
 

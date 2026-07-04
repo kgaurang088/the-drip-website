@@ -35,11 +35,11 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-32">
+    <section className="relative overflow-hidden bg-[#0B0B0B] py-16 lg:py-32">
 
       <div className="absolute inset-0 -z-10">
 
-        <div className="absolute right-[-180px] top-0 h-[420px] w-[420px] rounded-full bg-[#C8A96A]/10 blur-[180px]" />
+        <div className="absolute right-[-180px] top-0 h-[280px] w-[280px] lg:h-[420px] lg:w-[420px] rounded-full bg-[#C8A96A]/10 blur-[180px]" />
 
       </div>
 
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
 
           </h2>
 
-          <p className="section-description mt-8 max-w-3xl mx-auto">
+          <p className="section-description mt-6 lg:mt-8 max-w-3xl mx-auto text-sm sm:text-base leading-7 sm:leading-8">
 
             Every detail at The Drip has been thoughtfully
             designed to deliver unforgettable moments.
@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
 
         {/* Feature Cards */}
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+       <div className="mt-12 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
           {features.map((feature) => {
 
@@ -84,22 +84,22 @@ export default function WhyChooseUs() {
 
               <div
                 key={feature.title}
-                className="group rounded-[30px] border border-white/10 bg-[#151515] p-8 transition-all duration-500 hover:-translate-y-3 hover:border-[#C8A96A]"
+               className="group rounded-[24px] lg:rounded-[30px] border border-white/10 bg-[#151515] p-5 sm:p-6 lg:p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#C8A96A]"
               >
 
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#C8A96A]/10">
+                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-[#C8A96A]/10">
 
-                  <Icon className="h-8 w-8 text-[#C8A96A]" />
+                  <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-[#C8A96A]" />
 
                 </div>
 
-                <h3 className="mt-8 text-2xl font-semibold">
+                <h3 className="mt-6 lg:mt-8 text-xl sm:text-2xl font-semibold">
 
                   {feature.title}
 
                 </h3>
 
-                <p className="mt-5 leading-8 text-gray-400">
+                <p className="mt-4 text-sm sm:text-base leading-7 sm:leading-8 text-gray-400">
 
                   {feature.text}
 
@@ -114,14 +114,13 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Statistics */}
+            <div className="mt-16 lg:mt-28 rounded-[24px] lg:rounded-[36px] border border-[#C8A96A]/20 bg-[#151515] p-6 sm:p-8 lg:p-12">
 
-        <div className="mt-28 rounded-[36px] border border-[#C8A96A]/20 bg-[#151515] p-12">
-
-          <div className="grid grid-cols-2 gap-10 text-center lg:grid-cols-4">
+         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-center">
 
             <div>
 
-              <h3 className="text-5xl font-bold text-[#C8A96A]">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#C8A96A]">
 
                 25+
 
@@ -189,9 +188,9 @@ export default function WhyChooseUs() {
 
         {/* CTA */}
 
-        <div className="mt-28 text-center">
+        <div className="mt-16 lg:mt-28 text-center">
 
-          <h2 className="text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
 
             Ready To Experience
             <br />
@@ -203,7 +202,7 @@ export default function WhyChooseUs() {
 
           </h2>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
+          <p className="mx-auto mt-6 lg:mt-8 max-w-3xl text-base sm:text-lg leading-7 sm:leading-8 text-gray-400">
 
             Join us for handcrafted coffee,
             artisan kulfi, refreshing boba
@@ -211,7 +210,7 @@ export default function WhyChooseUs() {
 
           </p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-5">
+          <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row justify-center gap-4">
 
             <Link
               href="/menu"

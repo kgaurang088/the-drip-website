@@ -1,51 +1,51 @@
 "use client";
-
+  import Image from "next/image";
 const galleryItems = [
   {
     title: "Signature Coffee",
     category: "Coffee",
-    height: "h-[520px]",
+    height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
   {
     title: "Refreshing Boba",
     category: "Boba",
-    height: "h-[520px]",
+    height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
   {
     title: "Cafe Interior",
     category: "Cafe",
-    height: "h-[520px]",
+   height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
   {
     title: "Artisan Kulfi",
     category: "Kulfi",
-    height: "h-[520px]",
+   height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
   {
     title: "Grilled Sandwich",
     category: "Sandwiches",
-    height: "h-[520px]",
+   height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
   {
     title: "The Drip Experience",
     category: "Lifestyle",
-    height: "h-[520px]",
+    height: "h-[360px] sm:h-[420px] lg:h-[520px]",
   },
 ];
 
 export default function GalleryGrid() {
   return (
-    <section className="bg-[#0B0B0B] pb-32">
+    <section className="bg-[#0B0B0B] pb-16 lg:pb-32">
 
       <div className="container-custom">
 
-        <div className="columns-1 md:columns-2 xl:columns-3 gap-8">
+        <div className="columns-1 sm:columns-2 xl:columns-3 gap-6 lg:gap-8">
 
           {galleryItems.map((item) => (
 
             <div
               key={item.title}
-              className={`group relative mb-8 overflow-hidden rounded-[36px] border border-white/10 bg-[#151515] ${item.height} break-inside-avoid transition-all duration-700 hover:-translate-y-2 hover:border-[#C8A96A]`}
+              className={`group relative mb-6 lg:mb-8 overflow-hidden rounded-[24px] lg:rounded-[36px] border border-white/10 bg-[#151515] ${item.height} break-inside-avoid transition-all duration-700 hover:-translate-y-2 hover:border-[#C8A96A]`}
             >
 
               {/* Background Glow */}
@@ -76,11 +76,13 @@ export default function GalleryGrid() {
 
              <div className="absolute inset-0 flex items-center justify-center">
 
-              <img
-                   src="/logo.png"
-                    alt="The Drip"
-                    className="w-24 h-24 object-contain transition-all duration-700 group-hover:scale-110 group-hover:opacity-20"
-              />
+             <Image
+  src="/logo.png"
+  alt="The Drip"
+  width={96}
+  height={96}
+  className="w-20 h-20 sm:w-24 sm:h-24 object-contain transition-all duration-700 group-hover:scale-110 group-hover:opacity-20"
+/>
 
             </div>
 
@@ -92,21 +94,21 @@ export default function GalleryGrid() {
 
                 {/* Content */}
 
-            <div className="absolute bottom-8 left-8 right-8 translate-y-10 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="absolutebottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 translate-y-10 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
 
-                <span className="rounded-full border border-[#C8A96A]/40 bg-[#C8A96A]/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#C8A96A]">
+                <span className="rounded-full border border-[#C8A96A]/40 bg-[#C8A96A]/10  px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#C8A96A]">
 
                   {item.category}
 
             </span>
 
-            <h3 className="mt-5 text-3xl font-bold text-white">
+            <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-white">
 
               {item.title}
 
             </h3>
 
-             <p className="mt-3 text-gray-300">
+             <p className="mt-2 text-sm sm:text-base text-gray-300">
 
               Click to view
 

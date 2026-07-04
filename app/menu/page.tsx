@@ -32,14 +32,14 @@ const matchesSearch =
     <>
       <Navbar />
 
-      <section className="bg-black text-white min-h-screen py-24">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="bg-black text-white min-h-screen py-20 lg:py-24">
+       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-          <h1 className="text-6xl font-bold text-center mb-4">
+         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4">
             Our Menu
           </h1>
 
-          <p className="text-center text-gray-400 mb-12">
+          <p className="text-center text-sm sm:text-base text-gray-400 mb-8 lg:mb-12">
             Freshly crafted beverages & delicious treats.
           </p>
 
@@ -53,7 +53,7 @@ const matchesSearch =
             onSelect={setSelectedCategory}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {filteredProducts.map((product) => (
               <MenuCard
                 key={product.id}

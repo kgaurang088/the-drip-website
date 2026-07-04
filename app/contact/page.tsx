@@ -29,7 +29,7 @@ const [message, setMessage] = useState("");
 
 const [nameError, setNameError] = useState("");
 const [mobileError, setMobileError] = useState("");
-const [emailError, setEmailError] = useState("");
+const [, setEmailError] = useState("");
 const [subjectError, setSubjectError] = useState("");
 const [messageError, setMessageError] = useState("");
 
@@ -108,7 +108,7 @@ if (hasError) {
               HERO
         =========================================== */}
 
-        <section className="relative overflow-hidden pt-32 pb-28">
+        <section className="relative overflow-hidden pt-28 lg:pt-32 pb-16 lg:pb-28">
 
         {/* Background Glow */}
 
@@ -126,17 +126,17 @@ if (hasError) {
       CONTACT THE DRIP
     </p>
 
-    <h1 className="mt-6 text-5xl md:text-6xl xl:text-7xl font-bold leading-tight">
+    <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
 
-      We'd Love to
+      We&apos;d Love to
       <br />
       Welcome You.
 
     </h1>
 
-    <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
+    <p className="mx-auto mt-6 lg:mt-8 max-w-3xl text-base sm:text-lg leading-7 sm:leading-8 text-gray-400">
 
-      Whether you're planning your next coffee break,
+      Whether you&apos;re planning your next coffee break,
       meeting friends or simply exploring our menu,
       our team is always ready to help you.
       Visit us and experience freshly brewed coffee,
@@ -157,17 +157,17 @@ if (hasError) {
 
   <div className="container-custom">
 
-    <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
       {/* ===========================
           LEFT SIDE
       =========================== */}
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
         {/* Phone */}
 
-        <div className="group rounded-[20px] border border-white/10 bg-[#151515] p-8 transition-all duration-500 hover:border-[#C8A96A]">
+        <div className="group rounded-[20px] border border-white/10 bg-[#151515] p-6 lg:p-8 transition-all duration-500 hover:border-[#C8A96A]">
 
           <Phone className="w-6 h-6 text-[#C8A96A]" />
 
@@ -187,7 +187,7 @@ if (hasError) {
 
           <Mail className="w-6 h-6 text-[#C8A96A]" />
 
-          <h3 className="mt-6 text-x1 font-semibold">
+          <h3 className="mt-6 text-xl font-semibold">
             Email
           </h3>
 
@@ -224,7 +224,7 @@ if (hasError) {
               target="_blank"
               rel="noopener noreferrer"
         
-       className="group rounded-[24px] border border-white/10 bg-[#151515] p-8 transition-all duration-500 hover:border-[#C8A96A]">
+       className="group rounded-[24px] border border-white/10 bg-[#151515] p-6 lg:p-8 transition-all duration-500 hover:border-[#C8A96A]">
 
         <FaInstagram className="w-6 h-6 text-[#C8A96A]" />
 
@@ -246,7 +246,7 @@ if (hasError) {
             rel="noopener noreferrer"
             >
 
-     < div className="group rounded-[24px] border border-white/10 bg-[#151515] p-8 transition-all duration-500 hover:border-[#C8A96A]">
+     < div className="group rounded-[24px] border border-white/10 bg-[#151515] p-6 lg:p-8 transition-all duration-500 hover:border-[#C8A96A]">
 
       <MessageCircle className="w-6 h-6 text-[#C8A96A]" />
 
@@ -261,7 +261,7 @@ if (hasError) {
           </div>
           </a>
           {/*operating hours*/}
-           <div className="group rounded-[24px] border border-white/10 bg-[#151515] p-8 transition-all duration-500 hover:border-[#C8A96A]">
+           <div className="group rounded-[24px] border border-white/10 bg-[#151515] p-6 lg:p-8 transition-all duration-500 hover:border-[#C8A96A]">
 
       <MessageCircle className="w-6 h-6 text-[#C8A96A]" />
 
@@ -277,7 +277,7 @@ if (hasError) {
             
  
         {/* Google Maps */}
-<div className="col-span-2 mt-8">
+<div className="sm:col-span-2 mt-6 lg:mt-8">
   <div className="rounded-[24px] overflow-hidden border border-white/10 bg-[#151515]">
     <iframe
       src="https://www.google.com/maps?q=19.1383,77.3210&z=15&output=embed"
@@ -306,14 +306,14 @@ if (hasError) {
           CONTACT FORM
       =========================== */}
 
-      <div className="rounded-[32px] border border-white/10 bg-[#151515] p-10 h-fit">
-        <h2 className="text-3xl font-bold">
+      <div className="rounded-[24px] lg:rounded-[32px] border border-white/10 bg-[#151515] p-6 sm:p-8 lg:p-10 h-fit">
+       <h2 className="text-2xl sm:text-3xl font-bold">
           Send us a Message
         </h2>
 
         <p className="mt-3 max-w-lg text-gray-400 leading-7">
          Have a question, feedback, collaboration request, or franchise inquiry?
-         Fill out the form below and we'll get back to you as soon as possible.
+         Fill out the form below and we&apos;ll get back to you as soon as possible.
 </p>
 
         <form onSubmit={handleWhatsAppSubmit} className="mt-8 space-y-5">
@@ -326,7 +326,7 @@ if (hasError) {
                value={name}
                  onChange={(e) => setName(e.target.value)}
                    placeholder="Enter your full name"
-                  className="w-full rounded-2xl bg-[#101010] border border-white/10 px-6 py-4 outline-none focus:border-[#C8A96A]"
+                  className="w-full rounded-2xl bg-[#101010] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 outline-none focus:border-[#C8A96A]"
 />
                     {nameError && (
   <p className="mt-2 text-sm text-red-500">
@@ -338,7 +338,7 @@ if (hasError) {
                value={mobile}
                onChange={(e) => setMobile(e.target.value)}
                   placeholder=" Enter Your Mobile Number"
-                   className="w-full rounded-2xl bg-[#101010] border border-white/10 px-6 py-4 outline-none focus:border-[#C8A96A]"
+                   className="w-full rounded-2xl bg-[#101010] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 outline-none focus:border-[#C8A96A]"
             />
 
                       {mobileError && (
@@ -351,7 +351,7 @@ if (hasError) {
               value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 placeholder=" Enter Your Email (Optional)"
-               className="w-full rounded-2xl bg-[#101010] border border-white/10 px-6 py-4 outline-none focus:border-[#C8A96A]"
+               className="w-full rounded-2xl bg-[#101010] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 outline-none focus:border-[#C8A96A]"
               />
    {/*{emailError && (
   <p className="mt-2 text-sm text-red-500">
@@ -369,7 +369,7 @@ if (hasError) {
     value={subject}
     onChange={(e) => setSubject(e.target.value)}
     placeholder="How can we help you?"
-    className="w-full rounded-2xl bg-[#101010] border border-white/10 px-6 py-4 outline-none focus:border-[#C8A96A]"
+    className="w-full rounded-2xl bg-[#101010] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 outline-none focus:border-[#C8A96A]"
   />
 
           {subjectError && (
@@ -384,11 +384,11 @@ if (hasError) {
 
          
           <textarea
-  rows={6}
+  rows={5}
   value={message}
   onChange={(e) => setMessage(e.target.value)}
   placeholder="Tell us how we can help..."
-  className="w-full rounded-2xl bg-[#101010] border border-white/10 px-6 py-4 outline-none resize-none focus:border-[#C8A96A]"
+  className="w-full rounded-2xl bg-[#101010] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 outline-none resize-none focus:border-[#C8A96A]"
 />
         {messageError && (
   <p className="mt-2 text-sm text-red-500">
