@@ -23,4 +23,22 @@ export const categories = [
     image: "/sandwich.png",
     description: "Fresh grilled sandwiches",
   },
+  {
+    id: 5,
+    name: "Shakes",
+    image: "/shake.png",
+    description: "Thick & creamy milkshakes",
+  },
+  {
+    id: 6,
+    name: "Pizza",
+    image: "/pizza.png",
+    description: "Wood-fired gourmet pizzas",
+  },
+  {
+    id: 7,
+    name: "Burger",
+    image: "/burger.png",
+    description: "Juicy stacked burgers",
+  },
 ];

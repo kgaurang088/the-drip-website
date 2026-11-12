@@ -34,8 +34,25 @@ export function CartProvider({
 }: {
   children: ReactNode;
 }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("drip_cart");
+        return saved ? JSON.parse(saved) : [];
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Persist cart to localStorage on every change
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("drip_cart", JSON.stringify(cart));
+    }
+  }, [cart]);
 
   const cartCount = cart.reduce(
     (total, item) => total + item.quantity,

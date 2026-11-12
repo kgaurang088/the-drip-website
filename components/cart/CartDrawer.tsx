@@ -1,8 +1,10 @@
 "use client";
 
 import { useCart } from "../../context/CartContext";
+import { useRouter } from "next/navigation";
 
 export default function CartDrawer() {
+  const router = useRouter();
   const {
     cart,
     isCartOpen,
@@ -16,6 +18,11 @@ export default function CartDrawer() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  const handleCheckout = () => {
+    closeCart();
+    router.push("/checkout");
+  };
 
   return (
     <>
@@ -50,55 +57,68 @@ export default function CartDrawer() {
         {/* Cart Items */}
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
-            <p className="text-gray-400 text-lg">
-              Your cart is empty.
-            </p>
+            <div className="flex flex-col items-center justify-center h-full text-center gap-4">
+              <span className="text-5xl">🛒</span>
+              <p className="text-gray-400 text-lg">Your cart is empty.</p>
+              <button
+                onClick={closeCart}
+                className="text-amber-400 text-sm hover:underline"
+              >
+                Browse our menu →
+              </button>
+            </div>
           ) : (
             cart.map((item) => (
               <div
                 key={item.id}
-                className="border-b border-neutral-800 pb-6 mb-6"
+                className="border-b border-neutral-800 pb-5 mb-5 flex gap-3"
               >
-                <h3 className="text-xl font-semibold text-white">
-                  {item.name}
-                </h3>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
+                />
+                <div className="flex-1">
+                  <h3 className="text-base font-semibold text-white leading-tight">
+                    {item.name}
+                  </h3>
 
-                <p className="text-amber-400 font-bold mt-2">
-                  ₹{item.price}
-                </p>
+                  <p className="text-amber-400 font-bold mt-1 text-sm">
+                    ₹{item.price} each
+                  </p>
 
-                {/* Quantity Controls */}
-                <div className="flex items-center gap-4 mt-4">
+                  {/* Quantity Controls */}
+                  <div className="flex items-center gap-3 mt-3">
+                    <button
+                      onClick={() => decreaseQuantity(item.id)}
+                      className="w-7 h-7 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white text-sm flex items-center justify-center"
+                    >
+                      −
+                    </button>
 
-                  <button
-                    onClick={() => decreaseQuantity(item.id)}
-                    className="w-8 h-8 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white"
-                  >
-                    −
-                  </button>
+                    <span className="text-white font-semibold text-sm w-4 text-center">
+                      {item.quantity}
+                    </span>
 
-                  <span className="text-white font-semibold">
-                    {item.quantity}
-                  </span>
+                    <button
+                      onClick={() => increaseQuantity(item.id)}
+                      className="w-7 h-7 rounded-full bg-amber-400 text-black hover:bg-amber-300 text-sm flex items-center justify-center"
+                    >
+                      +
+                    </button>
 
-                  <button
-                    onClick={() => increaseQuantity(item.id)}
-                    className="w-8 h-8 rounded-full bg-amber-400 text-black hover:bg-amber-300"
-                  >
-                    +
-                  </button>
+                    <button
+                      onClick={() => removeItem(item.id)}
+                      className="ml-auto text-xs text-red-500 hover:text-red-400"
+                    >
+                      Remove
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => removeItem(item.id)}
-                    className="ml-auto text-red-500 hover:text-red-400"
-                  >
-                    Remove
-                  </button>
+                  <p className="text-gray-400 text-xs mt-2">
+                    Subtotal: ₹{item.price * item.quantity}
+                  </p>
                 </div>
-
-                <p className="text-gray-400 mt-4">
-                  Subtotal: ₹{item.price * item.quantity}
-                </p>
               </div>
             ))
           )}
@@ -106,14 +126,17 @@ export default function CartDrawer() {
 
         {/* Footer */}
         {cart.length > 0 && (
-          <div className="border-t border-neutral-800 p-6">
+          <div className="border-t border-neutral-800 p-6 space-y-4">
 
-            <div className="flex justify-between text-xl font-bold text-white mb-6">
+            <div className="flex justify-between text-xl font-bold text-white">
               <span>Total</span>
-              <span>₹{total}</span>
+              <span className="text-amber-400">₹{total}</span>
             </div>
 
-            <button className="w-full bg-amber-400 text-black py-4 rounded-xl font-bold hover:bg-amber-300 transition">
+            <button
+              onClick={handleCheckout}
+              className="w-full bg-amber-400 text-black py-4 rounded-xl font-bold hover:bg-amber-300 active:scale-95 transition"
+            >
               Proceed to Checkout →
             </button>
 
